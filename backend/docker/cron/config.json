@@ -1,0 +1,9 @@
+[
+  {
+    "comment": "Schedule run",
+    "schedule": "* * * * *",
+    "command": "php artisan schedule:run >> /dev/null 2>&1",
+    "project": "php-worker",
+    "container": "php-worker"
+}
+]
