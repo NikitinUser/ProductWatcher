@@ -2,7 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\Services\ProductSpyService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
 class ProductSpyCommand extends Command
 {
@@ -23,8 +25,10 @@ class ProductSpyCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(ProductSpyService $productSpyService)
     {
-        //
+        DB::connection()->disableQueryLog();
+
+        $productSpyService->run();
     }
 }
