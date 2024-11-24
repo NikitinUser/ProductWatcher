@@ -110,7 +110,7 @@ class ProductSpyServiceTest extends TestCase
     public function test_run_first_catch_another_http_err_success(): void
     {
         foreach (Response::$statusTexts as $code => $text) {
-            if ($code < 300 || in_array($code, ProductSpyService::AVAILABLE_TO_RETRY_HTTP_CODES)) {
+            if ($code < Response::HTTP_MULTIPLE_CHOICES || in_array($code, ProductSpyService::AVAILABLE_TO_RETRY_HTTP_CODES)) {
                 continue;
             }
 
