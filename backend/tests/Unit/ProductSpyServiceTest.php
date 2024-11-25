@@ -22,9 +22,18 @@ class ProductSpyServiceTest extends TestCase
     private $productSpyServiceMock;
 
     private $mockProducts = [
-        ['product_id' => 1],
-        ['product_id' => 2],
-        ['product_id' => 3],
+        [
+            'product_id' => 1,
+            'url' => 'http://192.168.0.1/',
+        ],
+        [
+            'product_id' => 2,
+            'url' => 'http://192.168.0.1/',
+        ],
+        [
+            'product_id' => 3,
+            'url' => 'http://192.168.0.1/',
+        ],
     ];
 
     protected function setUp(): void

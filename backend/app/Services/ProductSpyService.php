@@ -35,7 +35,7 @@ class ProductSpyService implements ProductSpyInterface
             $logDto->target_product_id = $product['product_id'];
 
             try {
-                $logDto->price = $this->priceRequester->getPrice();
+                $logDto->price = $this->priceRequester->getPrice($product['url']);
                 $logDto->result = PricesResultEnum::SUCCESS;
             } catch (RequestException $re) {
                 $statusCode = $re->response->status();
